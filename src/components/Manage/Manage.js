@@ -3,7 +3,7 @@ import Login from '../Login/Login'
 import Register from '../Register/Register'
 import facebook from './facebook.png'
 import Google from './google.png'
-import {BounceLoader} from 'react-spinners'
+import {ScaleLoader} from 'react-spinners'
 import { createContext } from 'react'
 
 export const loadingContext = createContext();
@@ -16,7 +16,7 @@ function Manage() {
     <loadingContext.Provider value={setloading}>
       {
         loading ? 
-        <BounceLoader color="#ffa500" />
+        <ScaleLoader color="#ffa500" />
         :
         loginsts ? <Login loginsts={loginsts} setloginsts={setloginsts} /> : <Register loginsts={loginsts} setloginsts={setloginsts} />
       }
