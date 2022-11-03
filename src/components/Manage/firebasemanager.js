@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,sendEmailVerification,signOut} from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,sendEmailVerification,sendPasswordResetEmail,signOut} from "firebase/auth";
 import {auth} from './firebase.config';
 
 export const CreateUser = (name,email,password) => {
@@ -47,4 +47,14 @@ export const loginUser = (email, password) => {
     .catch((error) => {
       return error.message;
     });
+}
+
+export const forgotPassword = (email) => {
+  return sendPasswordResetEmail(auth, email)
+         .then(() => {
+             alert('Password reset email sent')
+         })
+         .catch((error) => {
+             alert(error.message)
+         });
 }

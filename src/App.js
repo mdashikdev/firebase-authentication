@@ -13,7 +13,7 @@ function App() {
     logOut()
     setUser([]);
   }
-console.log(user)
+
   return (
     <UerContext.Provider value={{user, setUser}}>
       <div className='flex flex-col w-screen h-screen items-center justify-center'>
